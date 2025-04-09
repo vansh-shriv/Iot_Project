@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a; /* Dark black background */
+  --foreground: #f5f5f5; /* Light text for contrast */
+  --primary: #ffffff; /* Indigo for primary actions */
+  --secondary: #22c55e; /* Green for secondary actions */
+  --accent: #f97316; /* Orange for accents */
+  --muted: #6b7280; /* Gray for borders and muted text */
+  --border-radius: 12px; /* Rounded corners for modern look */
+  --transition: 0.3s ease-in-out;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', 'Arial', sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  transition: background var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  box-shadow: var(--shadow);
+}
+
+button:hover {
+  background: var(--secondary);
+  transform: scale(1.05);
+}
+
+input, textarea {
+  background: #1a1a1a;
+  color: var(--foreground);
+  border: 1px solid var(--muted);
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  background: #2a2a2a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid var(--muted);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.navbar {
+  background: #121212;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--muted);
+}
+
+.navbar a {
+  color: var(--foreground);
+  margin: 0 1rem;
+  font-size: 1rem;
+  transition: color var(--transition);
+}
+
+.navbar a:hover {
+  color: var(--accent);
+}
+
+.footer {
+  background: #121212;
+  color: var(--muted);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  border-top: 1px solid var(--muted);
+}
+
+.toast {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
